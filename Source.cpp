@@ -63,8 +63,8 @@ void checkWinner(){
     }
 
 }
-int main(int argc, char * argv[]) {
-
+//gets the grid size from command line savees the grid size to a variable and creates the board from it
+void getGridSize(int argc, char **argv) {
     //alerts the user that they did not input a gridsize
     if(argc < 2){
         cout << "Grid size was not specified. Please try again with a grid size like 3 for example." << endl;
@@ -76,10 +76,15 @@ int main(int argc, char * argv[]) {
     try{
         gridSize = stoi(argv[1]);
 
-    //if it cant be converted it catches the error and alerts the user that it needs to be in decimal format
+        //if it cant be converted it catches the error and alerts the user that it needs to be in decimal format
     }catch (exception &err){
         cout << "Please enter the grid size in decimal format and try again." << endl;
         exit(0);
     }
     createBoard();
+}
+int main(int argc, char * argv[]) {
+
+    getGridSize(argc, argv);
+    printBoard();
 }
