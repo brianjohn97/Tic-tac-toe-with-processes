@@ -123,9 +123,6 @@ void turn(vector<vector<char>> &board){
         break;
     }
 }
-void signal(int sig){
-    signal(SIGUSR1, signal);
-}
 int main(int argc, char * argv[]) {
 
     //getGridSize(argc, argv);
@@ -144,10 +141,7 @@ int main(int argc, char * argv[]) {
         board.push_back(temp);
     }
     pid_t pid;
-    int loop = gridSize * gridSize;
     pid = vfork();
-
-    //for (int i = 1; i <= loop; i++){
         if(pid > 0){
             waitpid(pid, NULL, WUNTRACED);
             cout << "i am the parent,  current player: "<< currPlayer << "\n";
