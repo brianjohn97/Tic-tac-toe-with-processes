@@ -1,22 +1,8 @@
 #include <iostream>
-#include <unistd.h>
-#include <vector>
-#include <sys/wait.h>
-
-#include <stdlib.h>
-#include <sys/types.h>
-#include <stdio.h>
-#include <string.h> 
 #include <sys/mman.h>
 #include <signal.h>
 #include <limits>
-#include <sched.h>
-#include <linux/sched.h>
-#include <sys/syscall.h>
-#include <memory>
 #include <fcntl.h>
-#include <sys/stat.h>
-#include <signal.h>
 
 using namespace std;
 
@@ -55,7 +41,7 @@ void printBoard(char* inc) {
 //gets the grid size from command line savees the grid size to a variable and creates the board from it
 void getGridSize(int argc, char **argv) {
     
-    while (1){
+    while (true){
         //alerts the user that they did not input a gridsize
         if(argc < 2){
             cout << "Grid size Must be between 3 and 10!\n";
