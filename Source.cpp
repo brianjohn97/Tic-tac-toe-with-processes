@@ -75,7 +75,7 @@ void getGridSize(int argc, char **argv) {
             exit(0);
         }
 
-        //makes sure that the grid size isnt too big or too small for play
+        //makes sure that the grid size isn't too big or too small for play
         if(gridSize > 10 || gridSize < 3){
             cout << "Grid size Must be between 3 and 10!\n";
             cout << "Grid size was too big! Please choose a better size! \n";
@@ -95,7 +95,7 @@ bool turn(char* inc){
         }
      }
 
-    while(1){
+    while(true){
         int row, col;
         int diagconter1 = 0;
         int diagconter2 = 0;
@@ -114,7 +114,7 @@ bool turn(char* inc){
         cout << "enter col: ";
         cin >> col;
         if(!cin || row  < 0  || row >= gridSize){
-            cout << "the inputed column does not exist please try again.\n";
+            cout << "the inputted column does not exist please try again.\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
@@ -127,7 +127,7 @@ bool turn(char* inc){
             continue;
         }
 
-        //places the piece downm
+        //places the piece down
         board[row][col] = inc[100];
 
         //converts the 2d array back into the 1d array
@@ -203,10 +203,10 @@ int main(int argc, char * argv[]) {
     int pid = fork();
         if(pid == 0){
 
-            while (1){
+            while (true){
                 //if it looped before the parent sleep timer has ended wait here until it is over
                 if(map[100] == 'X'){
-                    while(1){ 
+                    while(true){
                         //when this process continues again it will need to break out of this inner loop
                         if ( map[100] == 'O' ) { 
                             break; 
